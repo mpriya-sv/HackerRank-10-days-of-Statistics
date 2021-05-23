@@ -1,0 +1,29 @@
+no_of_elements = int(input())
+elements = list(map(int, input().split()))
+# print(elements)
+
+# Mean
+print(sum(elements)/no_of_elements)
+
+# Median
+elements = sorted(elements)
+# print(elements)
+if (len(elements) % 2) != 0:
+    median = elements[len(elements) // 2]
+    print(median)
+else:
+    median1 = elements[len(elements) // 2]
+    median2 = elements[len(elements) // 2 -1]
+    median = (median1 + median2) / 2
+    print(median)
+
+# Mode
+highest_freq, highest_freq_elem = 0, 0
+for ele in elements:
+    current_count = elements.count(ele)
+    if (current_count > highest_freq):
+        highest_freq = current_count
+        highest_freq_elem = ele
+        
+mode = highest_freq_elem
+print (mode)
